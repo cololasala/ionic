@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" color="secondary"> <!-- slot permite alinear el boton -->
+      <ion-back-button  defaultHref="/places">
+        Go back
+      </ion-back-button>
+    </ion-button>
+    <ion-title>{{ place.title }}</ion-title>
+    <ion-button class="button" slot="end" color="danger" (click)="removePlace()"><ion-icon name="trash-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding"> <!-- Ionic esta fuertemente basado en Bootstrap -->
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <img [src]="place.imageUrl" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{ place.title }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+        <ng-container *ngIf="place.comments.length; else noComments">
+          <ion-list>
+            <ion-item *ngFor="let comment of place.comments">
+              {{ comment }}
+            </ion-item>
+          </ion-list>
+        </ng-container>
+        <ng-template #noComments>
+          <p class="ion-text-center">No comments yet.</p>
+        </ng-template> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

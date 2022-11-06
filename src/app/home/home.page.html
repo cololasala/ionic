@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Home</ion-title>
+    <ion-button slot="start" color="secondary">
+      <ion-back-button defaultHref="/places">
+        Go back
+      </ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let photo of photos">
+      <ion-card>
+        <ion-img [src]="photo.url">
+        </ion-img>
+        <ion-card-content>
+          <p> Title: {{ photo.title }}</p>
+          <p>Album Id: {{ photo.albumId}}</p>
+          <a [href]="photo.url" target="_blank">Url: {{ photo.url }}</a>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

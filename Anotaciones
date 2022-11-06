@@ -1,0 +1,14 @@
+Se instalo ionic -> npm install -g @ionic/cli
+Para crear app -> ionic start
+Para iniciar es -> ionic serve
+Para generar cosas -> ionic generate
+
+Docs:
+https://ionicframework.com/docs/
+
+continuar viendo https://www.youtube.com/watch?v=bJ_DALcR1Ts&ab_channel=FaztCode
+
+En la seccion final se uso -> https://jsonplaceholder.typicode.com/
+
+Anotaciones:
+En Ionic el ngOnInit se ejecuta solo 1 vez. Por eso existen otros metodos propios de Ionic.

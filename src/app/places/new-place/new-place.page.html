@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button color="secondary" slot="start"> <!-- slot permite alinear el boton -->
+      <ion-back-button defaultHref="/places">
+        Go back
+      </ion-back-button>
+    </ion-button>
+    <ion-title>new-place</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-input #title type="text" placeholder="Write a title"></ion-input>
+          <ion-input #imageUrl type="text" placeholder="Url image"></ion-input>
+          <ion-button color="success" (click)="saveNewPlace(title.value, imageUrl.value)">
+            <ion-icon name="save-outline"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
